@@ -1020,61 +1020,60 @@ void recomendar_filme(CLIENTE* cliente, int cont_cliente, FILME* filme, int cont
                 if(empate!=0){
                     for(j=0; j<cont_filme; j++)
                     {
-                        for(k=0; k<empate; k++)
-                        { 
-                            filme_ta_hist = 0;   //verifica se filme esta no historico
-                            for(m=0; m<cont_assistir[i]; m++)
-                            {
-                                if(filme[j].filme.codigobusca == historico[i][m].codigo_filme)
-                                {
-                                    filme_ta_hist = 1;
-                                }
+                         
+                    filme_ta_hist = 0;   //verifica se filme esta no historico
+                    for(m=0; m<cont_assistir[i]; m++)
+                    {
+                        if(filme[j].filme.codigobusca == historico[i][m].codigo_filme)
+                        {
+                            filme_ta_hist = 1;
+                        }
+                    }
+                    if(filme_ta_hist == 0)
+                    {
+                        if(filme[j].genero == mais_assistido.identificador_genero)
+                        {
+                            printf("Codigo: %d\n", filme[j].filme.codigobusca);
+                            printf("Nome: %s\n", filme[j].filme.nome);
+                            if (filme[j].genero==aventura){    
+                                printf("Genero: aventura\n");
+                            }                          
+                            else if (filme[j].genero==comedia){   
+                                printf("Genero: comedia\n");
                             }
-                            if(filme_ta_hist == 0)
-                            {
-                                if(filme[j].genero == mais_assistido.identificador_genero)
-                                {
-                                    printf("Codigo: %d\n", filme[j].filme.codigobusca);
-                                    printf("Nome: %s\n", filme[j].filme.nome);
-                                    if (filme[j].genero==aventura){    
-                                        printf("Genero: aventura\n");
-                                    }                          
-                                    else if (filme[j].genero==comedia){   
-                                        printf("Genero: comedia\n");
-                                    }
-                                    else if (filme[j].genero==drama){ 
-                                        printf("Genero: drama\n");
-                                    }
-                                    else if (filme[j].genero==terror){ 
-                                        printf("Genero: terror\n");
-                                    }
-                                    else if (filme[j].genero==acao){   
-                                        printf("Genero: acao\n");
-                                    }
-                                    else if (filme[j].genero==romance){  
-                                        printf("Genero: romance\n");
-                                    }
-                                    if (filme[j].classificacao==livre){
-                                        printf("Classificacao: livre\n");
-                                    }
-                                    else if (filme[j].classificacao==mais10){
-                                        printf("Classificacao: +10\n");
-                                    }
-                                    else if (filme[j].classificacao==mais12){
-                                        printf("Classificacao: +12\n");
-                                    }
-                                    else if (filme[j].classificacao==mais14){
-                                        printf("Classificacao: +14\n");
-                                    }
-                                    else if (filme[j].classificacao==mais16){
-                                        printf("Classificacao: +16\n");
-                                    }
-                                    else if (filme[j].classificacao==mais18){
-                                        printf("Classificacao: +18\n");
-                                    }  
-                                }
+                            else if (filme[j].genero==drama){ 
+                                printf("Genero: drama\n");
+                            }
+                            else if (filme[j].genero==terror){ 
+                                printf("Genero: terror\n");
+                            }
+                            else if (filme[j].genero==acao){   
+                                printf("Genero: acao\n");
+                            }
+                            else if (filme[j].genero==romance){  
+                                printf("Genero: romance\n");
+                            }
+                            if (filme[j].classificacao==livre){
+                                printf("Classificacao: livre\n");
+                            }
+                            else if (filme[j].classificacao==mais10){
+                                printf("Classificacao: +10\n");
+                            }
+                            else if (filme[j].classificacao==mais12){
+                                printf("Classificacao: +12\n");
+                            }
+                            else if (filme[j].classificacao==mais14){
+                                printf("Classificacao: +14\n");
+                            }
+                            else if (filme[j].classificacao==mais16){
+                                printf("Classificacao: +16\n");
+                            }
+                            else if (filme[j].classificacao==mais18){
+                                printf("Classificacao: +18\n");
                             }  
                         }
+                    }  
+                        
                     }
                     for(j=0; j<cont_filme; j++)
                     {
